@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+## Create an Auth0 Account
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Navigate to the Applications tab and click on Create Application.
 
-## Available Scripts
+## Choose a name for your application, select Single Page Application (SPA), and then click Create.
 
-In the project directory, you can run:
+## In quickstart, select react
 
-### `npm start`
+## In the settings for the application, get the Client ID and Domain. You’ll need these values for your React app.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## click documentation and select SPA and react and select Integrate with an existing application
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## select your application and click save
 
-### `npm test`
+## Configure Auth0 by saving all three urls with http://localhost:3000/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Install Auth0 SDK for React - npm install @auth0/auth0-react
 
-### `npm run build`
+## import Auth0Provider in index.js & wrap App inside Provider
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+import { Auth0Provider } from '@auth0/auth0-react';
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<Auth0Provider
+		domain="dev-s24lff5dwvh8rmto.us.auth0.com"
+		clientId="ZkD5LoLq2F2eDGUwNypJwZ1nmbhn4Gz5"
+		authorizationParams={{
+		redirect_uri: window.location.origin,
+	}}>			
+  <App />
+</Auth0Provider>
+```
