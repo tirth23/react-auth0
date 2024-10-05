@@ -1,10 +1,10 @@
-## Create an Auth0 Account
+### Create an Auth0 Account
 
 ## Navigate to the Applications tab and click on Create Application.
 
-## Choose a name for your application, select Single Page Application (SPA), and then click Create.
+### Choose a name for your application, select Single Page Application (SPA), and then click Create.
 
-## In quickstart, select react
+### In quickstart, select react
 
 ## In the settings for the application, get the Client ID and Domain. You’ll need these values for your React app.
 
